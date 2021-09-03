@@ -1,6 +1,6 @@
-import mongoose from 'mongoose'; 
+import { Schema, models, model } from 'mongoose';
 
-const NoteSchema = new mongoose.Schema({
+const NoteSchema = new Schema({
     title: {
         type: String,
         required: [true, 'Please add a title'],
@@ -14,5 +14,4 @@ const NoteSchema = new mongoose.Schema({
     }
 })
 
-// CREATE A MODEL WITH NOTE SCHEMA IF IT DOES NOT EXIST
-module.exports = mongoose.models.Note || mongoose.model('Note', NoteSchema);
+export default models.Note || model('Note', NoteSchema);
