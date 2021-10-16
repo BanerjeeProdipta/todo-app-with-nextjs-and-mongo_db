@@ -7,7 +7,7 @@ const Index = ({ notes }) => {
     <div className="notes-container">
       <h1>Notes</h1>
       <div className="grid wrapper">
-        {notes.map(note => {
+        {notes?.map(note => {
           return (
             <div key={note._id}>
               <Card>
