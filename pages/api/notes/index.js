@@ -3,6 +3,7 @@ import Note from '../../../models/Note';
 
 dbConnect();
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
     const { method } = req;
 
@@ -22,7 +23,7 @@ export default async (req, res) => {
 
                 res.status(201).json({ success: true, data: note })
             } catch (error) {
-                res.status(400).json({ success: false });
+                res.status(400).json({ success: false, message: error.data });
             }
             break;
         default:

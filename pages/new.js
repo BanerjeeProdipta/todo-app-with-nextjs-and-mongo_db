@@ -22,6 +22,7 @@ const NewNote = () => {
     }, [errors])
 
     const createNote = async () => {
+        console.log(form)
         try {
             const res = await fetch('http://localhost:3000/api/notes', {
                 method: 'POST',
